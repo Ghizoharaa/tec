@@ -1,7 +1,7 @@
 .footer-container{
     background: url('./WhatsApp\ Image\ 2023-03-21\ at\ 15.56.06\ \(1\).jpeg') no-repeat  ;
     background-size: cover;
-    color: white;
+    color: rgb(255, 255, 255);
     transition: all 0.2s ease-in-out;
     // color: #010c10;
     //  background: rgb(206, 246, 248);
@@ -66,6 +66,9 @@
     div h2{
         font-size: 1.3rem;
     }
+}
+.dark{
+    background-color: red;
 }
 @media screen and (max-width: 768px) {
     .footer-container{

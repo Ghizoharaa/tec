@@ -7,12 +7,12 @@ import EmailIcon from "@mui/icons-material/Email";
 import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import RoomIcon from "@mui/icons-material/Room";
-export default function Footer() {
-  const [darkSide,setDarkSide] = useState(false)
+export default function Footer({dark}) {
+
   return (
-    <div className="footer-container" onClick={() => setDarkSide(!darkSide)} style={{
-      color: darkSide && '#010c10' ,
-      background: darkSide && 'rgb(206, 246, 248)'
+    <div className={`footer-container `}  style={{
+   
+      background: dark && 'rgb(206, 246, 248)'
     }}>
       <div className="first-slide">
         <h2>Trainung Edge Consulting</h2>

@@ -7,6 +7,7 @@ import styled ,{createGlobalStyle} from "styled-components";
     padding:0;
     box-sizing:border-box;
     font-family:"Glacial";
+
 }
 
 
@@ -24,6 +25,7 @@ margin-left:auto;
 margin-right:auto;
 padding-left:50px;
 padding-right:50px;
+
 
 @media screen and (max-width:991px) {
     padding-left:30px;

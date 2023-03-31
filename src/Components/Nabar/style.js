@@ -4,7 +4,7 @@ import {TbMovie} from 'react-icons/tb'
 import { Link } from 'react-router-dom'
  
  export const Nav=styled.nav`
-    background-color:#fcfcfc;
+ 
     height:80px;
     display:flex;
     justify-content: center;
@@ -15,6 +15,8 @@ import { Link } from 'react-router-dom'
     z-index:999;
 `
 export const NavContainer=styled(Container)`
+background-color:${({dark})=> dark ? "#010c10" :"#fcfcfc"};
+
  display:flex;
  justify-content:space-between;
  align-items:center;
@@ -65,7 +67,7 @@ display:flex;
 align-items:center;
 list-style:none;
 text-align:center;
-background-color:#fcfcfc;
+
 
 
 @media screen and (max-width:960px){
@@ -78,6 +80,7 @@ background-color:#fcfcfc;
       left:${({click})=>(click ? 0:'-100%')};
       opacity:1;
       transition:all 0.5 ease;
+      background-color:#fcfcfc;
   
     }
 
@@ -87,6 +90,7 @@ background-color:#fcfcfc;
 
 export const NavItem=styled.li`
     height:60px;
+    color:${({dark})=> dark ? "white" :"#fcfcfc"};
   
   
 

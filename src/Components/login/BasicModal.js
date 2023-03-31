@@ -4,24 +4,23 @@ import Modal from '@mui/joy/Modal';
 import ModalClose from '@mui/joy/ModalClose';
 import Typography from '@mui/joy/Typography';
 import Sheet from '@mui/joy/Sheet';
+import styled from 'styled-components';
 
 export default function BasicModal({open,setOpen,children}) {
  
   return (
-    <React.Fragment>
-     
-      <Modal
-        aria-labelledby="modal-title"
-        aria-describedby="modal-desc"
+ 
+      <ModalC
+        
         open={open}
         onClose={() => setOpen(false)}
         sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}
       >
-        <Sheet
-          variant="outlined"
+        <Test
+         
           sx={{
-            maxWidth: 500,
-            height:"80%",
+      
+           
             borderRadius: 'md',
           
             boxShadow: 'lg',
@@ -37,9 +36,33 @@ export default function BasicModal({open,setOpen,children}) {
               bgcolor: 'background.body',
             }}
           />
-        {children}
-        </Sheet>
-      </Modal>
-    </React.Fragment>
+        
+
+          {children}
+         
+       
+        </Test>
+
+    </ModalC>
   );
 }
+
+
+const ModalC=styled(Modal)`
+
+width: 100%;
+`
+
+
+const Test=styled(Sheet)`
+
+width: auto;
+@media screen and (max-width:960px){
+  width: 100%;
+        margin:15px;
+    
+      
+    }
+
+
+`

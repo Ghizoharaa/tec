@@ -12,12 +12,12 @@ import { Button, Tooltip } from '@mui/material';
 
 
 
-function Navbar({click,setClick,open,setOpen,dark,setDark}) {
+function Navbar({click,setClick,setOpen,dark,setDark}) {
   const handelClick=()=>setClick(!click);
   return (
     <IconContext.Provider value={{color:'black'}}>
-      <Nav>
-        <NavContainer>
+      <Nav >
+        <NavContainer dark={dark}>
           <NavLogo to='/'>
           BBC
           </NavLogo>
@@ -35,16 +35,21 @@ function Navbar({click,setClick,open,setOpen,dark,setDark}) {
             <NavItem>
               <Navlinks  to='/'>Contact</Navlinks>
             </NavItem>
+
+            <Tooltip title={"login pages"}>
+            <Button>en</Button>
+            </Tooltip>
+
             <Tooltip title={dark ? "dark mode" : "light mode"}>
-            <Button onClick={()=>setDark(!dark)} >
+            <Button variant='text'   onClick={()=>setDark(!dark)} >
               
               {
-                dark ?  <MdNightlight  fontSize={"30px"} />:   <MdLightMode color=' #f5b400' fontSize={"30px"} />
+                dark ?  <MdNightlight color={dark ? "white" : "black"}  fontSize={"30px"} />:   <MdLightMode color=' #f5b400' fontSize={"30px"} />
               }
             </Button>
             </Tooltip>
             <Tooltip title={"login pages"}>
-            <Button onClick={()=>setOpen(true)} sx={{borderRadius:"18px",margin:"13px"}} variant='contained'>login</Button>
+            <Button onClick={()=>{setOpen(true);setClick(false)}} sx={{borderRadius:"18px",margin:"13px"}} variant='contained'>login</Button>
             </Tooltip>
           
            </NavMenu>
