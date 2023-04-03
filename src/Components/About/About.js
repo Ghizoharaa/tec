@@ -1,21 +1,15 @@
 import { Card, Crad } from "./Card"
 import  {AbouteContainer,Info,PuLL,Title,Pargraphe,ContainerCard} from "./style"
 
-export default function About() {
+export default function About({dark}) {
   return (
    <AbouteContainer 
-   animate={{opacity:[0.85,0.90,0.95,1],y:0}}
 
-   initial={{y:30}}
-   transition={{
-    type: 'tween',
-    duration: 1.2
-  }}
-   
+  dark={dark}
    >
 
     <Info>
-           <PuLL whileHover={{scale:1.1}}>
+           <PuLL dark={dark} whileHover={{scale:1.1}}>
               Key Features
             </PuLL>
         <Title>

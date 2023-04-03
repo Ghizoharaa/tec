@@ -11,7 +11,7 @@ export const ContainerI = styled(Container)`
   align-items:center;
    gap:100px;
    color:${({dark})=>dark ? "#fff" : "#000"};
-   
+
 
 
    
@@ -40,7 +40,7 @@ export const Title = styled.h1`
   font-size:3vw;
   font-weight:660;
   padding:8px 0px;
-  color :#1CC4CF;
+  
  
 
   @media screen and (max-width: 768px) {
@@ -48,7 +48,19 @@ export const Title = styled.h1`
   }
     
 `;
+export const Span = styled.span`
+    font-size:3vw;
+  font-weight:660;
+  padding:8px 0px;
+  color:${({dark})=>dark ? "#16a8b2" : "#1CC4CF"};
+ color:rgb(28,196,207);
 
+  @media screen and (max-width: 768px) {
+    font-size:6vw;
+  }
+    
+ 
+`;
 export const Description = styled.p`
     text-align:justify;
     font-size:20px;
@@ -77,11 +89,17 @@ export const ButtonL = styled.button`
     width:350px;
   font-size:20px;
   
-    color:${({dark})=>dark ? "#fff" : "#000"};
-   background-color:${({dark})=>dark ? "transparent" : "white"};
+    color:${({dark})=>dark ? "#fff" : "#ffe"};
+   background-color:${({dark})=>dark ? "transparent" : "#1CC4CF"};
 
   border-radius: ${({dark})=>dark ? "0" : "5px"};
-
+  outline-style: solid;
+  border:none;
+  outline-color:${({dark})=>dark ? "#1CC4CF" : "#fff"};
+  &:hover{
+    background-color:#1CC4CF;
+    transition:1s all ;
+  }
   cursor: pointer;
   @media screen and (max-width: 768px) {
     width: 100%;
@@ -90,7 +108,7 @@ export const ButtonL = styled.button`
 `;
 
 export const Contact = styled.div`
-    font-size:18px;
+    font-size:16px;
      @media screen and (max-width: 768px) {
         
   }
@@ -98,7 +116,7 @@ export const Contact = styled.div`
 
 export const Phone = styled.span`
    
-    font-weight: bold;
+    font-weight: 200;
 `;
 
 export const ContactText = styled.span`

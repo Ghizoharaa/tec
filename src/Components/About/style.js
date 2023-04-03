@@ -11,10 +11,12 @@ import { Container } from '../../golobalStyle'
 export const AbouteContainer=styled(Container)`
     display:flex;
     flex-direction:column;
-    ${Container}
-
-   
+    color:${({dark})=>dark ? "white":"#000"};
     
+    ${Container}
+   
+
+  
 `
  export const Info=styled(motion.div)`
 
@@ -23,14 +25,15 @@ export const AbouteContainer=styled(Container)`
  `
 
 export const PuLL=styled(motion.div)`
-width:100px;
+width:120px;
 font-size:12px;
 color:white;
-padding:7px 13px;
+padding:9px 13px;
 background: #000;
 border-radius:30px;
 text-align:center;
-
+background-color:${({dark})=>dark ? "#fff":"#000"};
+color:${({dark})=>dark ? "#000":"#fff"};
 `
 
 export const Title=styled.h1`
@@ -39,7 +42,7 @@ export const Title=styled.h1`
 
 export const Pargraphe=styled.p`
      padding:8px 0px;
-     color:hsl(216,3%,35%);
+   
 `
 
 export const ContainerCard=styled(motion.div)`

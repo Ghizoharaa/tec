@@ -10,6 +10,7 @@ import BasicModal from "./Components/login/BasicModal";
 import SignIn from "./Components/login/Login";
 import SignUp from "./Components/login/SignUp";
 import styled from "styled-components";
+import Contact from "./Components/contact/Contact";
 
 function App() {
   
@@ -29,8 +30,10 @@ function App() {
         }
        </BasicModal>
      <Intro dark={dark}/>
-      <About/>
+      <About dark={dark}/>
      <Services/>
+   
+     <Contact/>
      <Footer/>
      </ConatinerApp>
     </BrowserRouter>

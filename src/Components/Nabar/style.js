@@ -28,7 +28,7 @@ background-color:${({dark})=> dark ? "#010c10" :"#fcfcfc"};
 
 export const NavLogo = styled(Link)`
 
-    color :#2b79b6;
+color:#1CC4CF;
     justify-self:flex-start;
     cursor: pointer;
     text-decoration:none;
@@ -67,7 +67,7 @@ display:flex;
 align-items:center;
 list-style:none;
 text-align:center;
-
+color:${({dark})=>dark ? "#fff" : "#000"};
 
 
 @media screen and (max-width:960px){
@@ -80,7 +80,7 @@ text-align:center;
       left:${({click})=>(click ? 0:'-100%')};
       opacity:1;
       transition:all 0.5 ease;
-      background-color:#fcfcfc;
+      background-color:${({dark})=>dark ? "#000e12":"#fff"};
   
     }
 
@@ -90,7 +90,7 @@ text-align:center;
 
 export const NavItem=styled.li`
     height:60px;
-    color:${({dark})=> dark ? "white" :"#fcfcfc"};
+   
   
   
 
@@ -109,6 +109,7 @@ export const Navlinks=styled(Link)`
     text-decoration:none;
     padding:0.5rem 1rem;
     height:100%;
+    color:${({dark})=> dark ? "#fff" :"#000"};
     @media screen and (max-width:960px){
         overflow:hidden;
       text-align:center;
