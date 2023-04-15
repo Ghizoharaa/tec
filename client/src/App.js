@@ -30,7 +30,7 @@ function App() {
         }
        </BasicModal>
      <Intro dark={dark}/>
-      <About dark={dark}/>
+      <About id="about" dark={dark}/>
      <Services/>
    
      <Contact/>

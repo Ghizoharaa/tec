@@ -29,12 +29,7 @@ const theme = createTheme();
 
 export default function SignIn({setSignInFirst}) {
   const handleSubmit = (event) => {
-    event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    console.log({
-      email: data.get('email'),
-      password: data.get('password'),
-    });
+ console.log("hello");
   };
 
   return (
@@ -44,6 +39,7 @@ export default function SignIn({setSignInFirst}) {
         <Box
           sx={{
             marginTop: 8,
+            marginBottom:8,
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
@@ -81,7 +77,7 @@ export default function SignIn({setSignInFirst}) {
               label="Remember me"
             />
             <Button
-              type="submit"
+              type="button"
               fullWidth
               variant="contained"
               sx={{ mt: 3, mb: 2 }}
@@ -102,7 +98,7 @@ export default function SignIn({setSignInFirst}) {
             </Grid>
           </Box>
         </Box>
-        <Copyright sx={{ mt: 8, mb: 4 }} />
+      
       </Container>
     </ThemeProvider>
   );
