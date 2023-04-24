@@ -28,7 +28,7 @@ const newsData = [
         content: 'The Federal Reserve announced today that it will raise interest rates by 25 basis points..Lorem ipsum dolor sit amet consectetur adipisicing elit. .',
     },
     {
-        id: 5,
+        id: 6,
         title: 'Bitcoin price plummets',
         content: 'The price of Bitcoin dropped sharply on Wednesday, falling more than 10% in a single day.Lorem ipsum dolor sit amet consectetur adipisicing elit..',
     }

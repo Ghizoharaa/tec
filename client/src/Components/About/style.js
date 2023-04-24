@@ -11,7 +11,7 @@ import { Container } from '../../golobalStyle'
 export const AbouteContainer=styled(Container)`
     display:flex;
     flex-direction:column;
-    color:${({dark})=>dark ? "white":"#000"};
+    color:${({theme})=>theme=="dark" ? "white":"#000"};
     
     ${Container}
    
@@ -32,8 +32,8 @@ padding:9px 13px;
 background: #000;
 border-radius:30px;
 text-align:center;
-background-color:${({dark})=>dark ? "#fff":"#000"};
-color:${({dark})=>dark ? "#000":"#fff"};
+background-color:${({theme})=>theme=="dark" ? "#fff":"#000"};
+color:${({theme})=>theme=="dark" ? "#000":"#fff"};
 `
 
 export const Title=styled.h1`

@@ -10,7 +10,7 @@ export const ContainerI = styled(Container)`
    justify-content:space-between;
   align-items:center;
    gap:100px;
-   color:${({dark})=>dark ? "#fff" : "#000"};
+   color:${({theme})=>theme=="dark" ? "#fff" : "#000"};
 
 
 
@@ -52,7 +52,7 @@ export const Span = styled.span`
     font-size:3vw;
   font-weight:660;
   padding:8px 0px;
-  color:${({dark})=>dark ? "#16a8b2" : "#1CC4CF"};
+  color:${({theme})=>theme=='dark' ? "#16a8b2" : "#1CC4CF"};
  color:rgb(28,196,207);
 
   @media screen and (max-width: 768px) {
@@ -89,13 +89,13 @@ export const ButtonL = styled.button`
     width:350px;
   font-size:20px;
   
-    color:${({dark})=>dark ? "#fff" : "#ffe"};
-   background-color:${({dark})=>dark ? "transparent" : "#1CC4CF"};
+    color:${({theme})=>theme=='dark' ? "#fff" : "#ffe"};
+   background-color:${({theme})=>theme=='dark' ? "transparent" : "#1CC4CF"};
 
-  border-radius: ${({dark})=>dark ? "0" : "5px"};
+  border-radius: ${({theme})=>theme=='dark'};
   outline-style: solid;
   border:none;
-  outline-color:${({dark})=>dark ? "#1CC4CF" : "#fff"};
+  outline-color:${({theme})=>theme=='dark'? "#1CC4CF" : "#fff"};
   &:hover{
     background-color:#1CC4CF;
     transition:1s all ;

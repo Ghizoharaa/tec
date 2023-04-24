@@ -8,6 +8,7 @@ import styled ,{createGlobalStyle} from "styled-components";
     box-sizing:border-box;
     font-family:"Glacial";
 
+
 }
 
 

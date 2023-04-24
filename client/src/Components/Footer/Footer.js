@@ -7,12 +7,16 @@ import EmailIcon from "@mui/icons-material/Email";
 import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import RoomIcon from "@mui/icons-material/Room";
-export default function Footer({dark}) {
+import { useTheme } from "../../hook/useTheme";
 
+
+export default function Footer() {
+const {theme}=useTheme()
   return (
     <div className={`footer-container `}  style={{
-   
-      background: dark && 'rgb(206, 246, 248)'
+  backgroundColor:theme=="dark" ? "#010c10" : "white",
+  color:theme=="dark" ? "white" : "black"
+
     }}>
       <div className="first-slide">
         <h2>Trainung Edge Consulting</h2>

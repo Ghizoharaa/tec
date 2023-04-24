@@ -10,35 +10,45 @@ import Box from '@mui/material/Box';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
+
+import { useSignup } from '../../hook/useSignup';
+import { Alert } from 'react-bootstrap';
 
 
 
-const theme = createTheme();
+
+
 
 export default function SignUp({setSignInFirst}) {
-  const handleSubmit = (event) => {
+  const [firstname,setFirstname]=React.useState("")
+  const [lastname,setLasname]=React.useState("")
+const [email,setEmail]=React.useState("")
+const {isLoading,iserror,signup}=useSignup()
+const [password,setPassord]=React.useState("")
+
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    console.log({
-      email: data.get('email'),
-      password: data.get('password'),
-    });
+    await signup (firstname,lastname,email,password);
   };
 
+
+  console.log(iserror);
   return (
-    <ThemeProvider theme={theme}>
+
       <Container component="main" maxWidth="xs">
         <CssBaseline />
         <Box
           sx={{
-            marginTop: 8,
-            marginBottom:8,
+            marginTop: 4,
+            marginBottom:4,
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
           }}
         >
+
+        
+             {iserror && <Alert sx={{width:"100px"}}  severity="error">{iserror}</Alert>}
           <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
             <LockOutlinedIcon />
           </Avatar>
@@ -51,6 +61,8 @@ export default function SignUp({setSignInFirst}) {
                 <TextField
                   autoComplete="given-name"
                   name="firstName"
+                  value={firstname}
+                  onChange={e=>setFirstname(e.target.value)}
                   required
                   fullWidth
                   id="firstName"
@@ -63,6 +75,8 @@ export default function SignUp({setSignInFirst}) {
                   required
                   fullWidth
                   id="lastName"
+                  value={lastname}
+                  onChange={e=>setLasname(e.target.value)}
                   label="Last Name"
                   name="lastName"
                   autoComplete="family-name"
@@ -73,6 +87,8 @@ export default function SignUp({setSignInFirst}) {
                   required
                   fullWidth
                   id="email"
+                  value={email}
+                  onChange={e=>setEmail(e.target.value)}
                   label="Email Address"
                   name="email"
                   autoComplete="email"
@@ -82,6 +98,8 @@ export default function SignUp({setSignInFirst}) {
                 <TextField
                   required
                   fullWidth
+                  value={password}
+                  onChange={e=>setPassord(e.target.value)}
                   name="password"
                   label="Password"
                   type="password"
@@ -110,6 +128,6 @@ export default function SignUp({setSignInFirst}) {
         </Box>
       
       </Container>
-    </ThemeProvider>
+    
   );
 }

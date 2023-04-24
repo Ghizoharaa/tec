@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@emailjs/browser": "^3.11.0",
     "@emotion/react": "^11.10.6",
     "@emotion/styled": "^11.10.6",
     "@mui/icons-material": "^5.11.11",
@@ -19,6 +20,7 @@
     "react-icons": "^4.8.0",
     "react-responsive": "^9.0.2",
     "react-scripts": "5.0.1",
+    "react-three-paper": "^1.0.4",
     "sass": "^1.60.0",
     "styled-components": "^5.3.9",
     "web-vitals": "^2.1.4"

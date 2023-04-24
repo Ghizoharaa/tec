@@ -2,8 +2,6 @@ import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
 import TextField from '@mui/material/TextField';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import Checkbox from '@mui/material/Checkbox';
 import Link from '@mui/material/Link';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
@@ -11,30 +9,29 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { useLogin } from '../../hook/useLogin';
+import { useState } from 'react';
+import { useAuth } from '../../hook/useAuth';
+import { Alert } from '@mui/material';
 
-function Copyright(props) {
-  return (
-    <Typography variant="body2" color="text.secondary" align="center" {...props}>
-      {'Copyright © '}
-      <Link color="inherit" href="https://mui.com/">
-        Your Website
-      </Link>{' '}
-      {new Date().getFullYear()}
-      {'.'}
-    </Typography>
-  );
-}
+
 
 const theme = createTheme();
 
-export default function SignIn({setSignInFirst}) {
-  const handleSubmit = (event) => {
- console.log("hello");
+export default  function  SignIn ({setSignInFirst}) {
+  const [email,setEmail]=useState("")
+    const {isLoading,login,iserror}=useLogin()
+  const [password,setPassord]=useState("")
+  const handleSubmit = async(event) => {
+    event.preventDefault()
+  await login(email,password)
+
   };
 
   return (
     <ThemeProvider theme={theme}>
       <Container component="main" maxWidth="xs">
+       
         <CssBaseline />
         <Box
           sx={{
@@ -44,10 +41,13 @@ export default function SignIn({setSignInFirst}) {
             flexDirection: 'column',
             alignItems: 'center',
           }}
-        >
+        > 
+    
+             {iserror && <Alert sx={{width:"100%"}} severity="error">{iserror}</Alert>}
           <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
             <LockOutlinedIcon />
           </Avatar>
+        
           <Typography component="h1" variant="h5">
             Sign in
           </Typography>
@@ -59,6 +59,11 @@ export default function SignIn({setSignInFirst}) {
               id="email"
               label="Email Address"
               name="email"
+
+              value={email}
+              onChange={(e)=>{
+                setEmail(e.target.value)
+              }}
               autoComplete="email"
               autoFocus
             />
@@ -67,17 +72,18 @@ export default function SignIn({setSignInFirst}) {
               required
               fullWidth
               name="password"
+              value={password}
+              onChange={(e)=>{
+                setPassord(e.target.value)
+              }}
               label="Password"
               type="password"
               id="password"
               autoComplete="current-password"
             />
-            <FormControlLabel
-              control={<Checkbox value="remember" color="primary" />}
-              label="Remember me"
-            />
+            
             <Button
-              type="button"
+              type="submit"
               fullWidth
               variant="contained"
               sx={{ mt: 3, mb: 2 }}

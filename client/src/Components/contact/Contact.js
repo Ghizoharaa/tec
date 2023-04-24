@@ -1,43 +1,63 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import "./style.css"
 import { Container } from '../../golobalStyle'
+import emailjs from '@emailjs/browser';
 export default function Contact() {
+
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs.sendForm('service_pnmwd8n',
+     'template_1c8dodw',
+      form.current, 'attcGULGv8EpYM0CA')
+      .then((result) => {
+          console.log(result.text);
+          
+      }, (error) => {
+          console.log(error.text);
+      });
+  };
+
+
+
   return (
     <Container>
-    <div class="background">
-    <div class="container">
-      <div class="screen">
-        <div class="screen-header">
+    <div className="background">
+    <div className="container">
+      <div className="screen">
+        <div className="screen-header">
          
           
         </div>
-        <div class="screen-body">
-          <div class="screen-body-item left">
-            <div class="app-title">
+        <div className="screen-body">
+          <div className="screen-body-item left">
+            <div className="app-title">
               <span>CONTACT</span>
               <span>US</span>
             </div>
-            <div class="app-contact">CONTACT INFO : +07 08 08 09 09 </div>
+            <div className="app-contact">CONTACT INFO : +07 08 08 09 09 </div>
           </div>
-          <div class="screen-body-item">
-            <div class="app-form">
-              <div class="app-form-group">
-                <input class="app-form-control" placeholder="NAME" />
+          <div className="screen-body-item">
+            <form className="app-form"  ref={form} onSubmit={sendEmail}>
+              <div className="app-form-group">
+                <input className="app-form-control" name='user_name' placeholder="NAME" />
               </div>
-              <div class="app-form-group">
-                <input class="app-form-control" placeholder="EMAIL"/>
+              <div className="app-form-group">
+                <input className="app-form-control" name='user_email' placeholder="EMAIL"/>
               </div>
-              <div class="app-form-group">
-                <input class="app-form-control" placeholder="CONTACT numb"/>
+              <div className="app-form-group">
+                <input className="app-form-control" name='user_nb'  placeholder="CONTACT numb"/>
               </div>
-              <div class="app-form-group message">
-                <input class="app-form-control" placeholder="MESSAGE"/>
+              <div className="app-form-group message">
+                <input className="app-form-control" name='message' placeholder="MESSAGE"/>
               </div>
-              <div class="app-form-group buttons">
-                <button class="app-form-button">CANCEL</button>
-                <button class="app-form-button">SEND</button>
+              <div className="app-form-group buttons">
+                <button type='reset' className="app-form-button">CANCEL</button>
+                <button type="submit" className="app-form-button">SEND</button>
               </div>
-            </div>
+            </form>
           </div>
         </div>
       </div>

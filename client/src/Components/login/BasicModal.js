@@ -5,9 +5,15 @@ import ModalClose from '@mui/joy/ModalClose';
 import Typography from '@mui/joy/Typography';
 import Sheet from '@mui/joy/Sheet';
 import styled from 'styled-components';
+import { useAuth } from '../../hook/useAuth';
 
 export default function BasicModal({open,setOpen,children}) {
  
+const {user}=useAuth()
+
+if (user) {
+   setOpen(false)
+}
   return (
  
       <ModalC

@@ -2,7 +2,9 @@ import styled from 'styled-components'
 import { Container } from '../../golobalStyle'
 import {TbMovie} from 'react-icons/tb'
 import { Link } from 'react-router-dom'
- 
+import { useTheme } from '../../hook/useTheme';
+
+
  export const Nav=styled.nav`
  
     height:80px;
@@ -15,14 +17,15 @@ import { Link } from 'react-router-dom'
     z-index:999;
 `
 export const NavContainer=styled(Container)`
-background-color:${({dark})=> dark ? "#010c10" :"#fcfcfc"};
+background-color:${({theme})=> theme=="dark" ? "#010c10" :"#fcfcfc"};
 
  display:flex;
  justify-content:space-between;
  align-items:center;
+ 
 
  height:80px;
- ${Container}
+
 `
 
 
@@ -67,8 +70,8 @@ display:flex;
 align-items:center;
 list-style:none;
 text-align:center;
-color:${({dark})=>dark ? "#fff" : "#000"};
-
+margin-top:15px;
+color:${({theme})=>theme=="dark" ? "#fff" : "#000"};
 
 @media screen and (max-width:960px){
       display:flex;
@@ -76,11 +79,11 @@ color:${({dark})=>dark ? "#fff" : "#000"};
       width:100%;
       height:90vh;
       position:absolute;
-      top:80px;
+      top:60px;
       left:${({click})=>(click ? 0:'-100%')};
       opacity:1;
       transition:all 0.5 ease;
-      background-color:${({dark})=>dark ? "#000e12":"#fff"};
+      background-color:${({theme})=>theme=="dark" ? "#000e12":"#fff"};
   
     }
 
@@ -109,7 +112,7 @@ export const Navlinks=styled(Link)`
     text-decoration:none;
     padding:0.5rem 1rem;
     height:100%;
-    color:${({dark})=> dark ? "#fff" :"#000"};
+    color:${({theme})=> theme=="dark" ? "#fff" :"#000"};
     @media screen and (max-width:960px){
         overflow:hidden;
       text-align:center;

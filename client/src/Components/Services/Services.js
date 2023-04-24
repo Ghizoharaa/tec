@@ -6,7 +6,10 @@ import img1 from './img1.jpg'
 import img2 from './img2.jpg'
 import service from '../Services/services.jpg'
 import img3 from './img3.jpg'
+import { useTheme } from '../../hook/useTheme';
 function Services() {
+
+  const {theme}=useTheme()
    const [index , setIndex] = useState(2)
    const handleSelect = () => {
     setIndex()
@@ -15,7 +18,10 @@ function Services() {
     <div className='services-container'>
             <div >
         <div className='services-top-bar'>
-            <h2>
+            <h2 style={{
+                color:theme=="dark" ? "white" : "black",
+              margin:60
+            }}>
                 Services
             </h2>
         </div>

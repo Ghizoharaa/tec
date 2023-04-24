@@ -31,9 +31,7 @@ export const Crad = () => {
       </CardContent>
     </CardActionArea>
     <CardActions>
-      <Button size="small" color="primary">
-       see more
-      </Button>
+    
     </CardActions>
 
         </CradContainer>
