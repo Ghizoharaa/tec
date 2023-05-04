@@ -7,10 +7,10 @@ const Route=express.Router()
 
 
 
-Route.get("/login",login)
+Route.post("/login",login)
 
 
-Route.get("/register",register)
+Route.post("/register",register)
 
 
 module.exports=Route
