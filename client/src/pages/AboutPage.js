@@ -5,6 +5,8 @@ import { useTheme } from '../hook/useTheme';
 
 
 
+import img from "./img/exmple.jpg"
+
 const AboutPage = () => {
 
   const {theme}=useTheme()
@@ -31,13 +33,14 @@ const AboutPage = () => {
                </p>
 
                <div className='img'> 
-      
+           <img className={theme=="dark" ? "exmple shadowDark":" exmple shadowLight"}  src={img} />
          </div>
             </div>
             </div>
+            
  
            
-           
+         
           </div>
          
         </div>
@@ -70,8 +73,12 @@ padding-bottom:120px;
     display:flex;
     flex-direction:row;
     justify-content:center;
+    align-items:center;
+
+    
   }
 p{
+  font-size:1vw;
 margin-top:20px;
 
 flex:1;
@@ -80,7 +87,25 @@ text-align:justify;
 }
 
 .img{
+
   flex:1;
+ width:400px;
+   height:450px;
+   display:flex;
+   justify-content:center;
+   
+  .exmple{
+    width:70%;
+    border-radius:20px;
+    object-fit: cover;
+    margin-right: 14px;
+  display: block;
+  float: left;
+  box-shadow: 3px 3px 1px #ccc;
+  -webkit-box-shadow: 3px 3px 1px #ccc;
+  -moz-box-shadow: 3px 3px 1px #ccc;
+
+  }
 }
 .title{
  
@@ -99,8 +124,36 @@ background: linear-gradient(90deg, rgba(1,180,228,1) 18%, rgba(144,206,161,1) 88
   top: 40px;
   left: 0;
 }
+}
+@media screen and (max-width:960px){
+  .body{
+
+display:block;
 
 
 
 }
+p{
+
+  font-size:3vw;
+text-align:start;
+
+}
+
+.img{
+
+width:100%;
+height:400px;
+
+
+.exmple{
+
+border-radius:30px;
+object-fit: cover;
+
+}
+}
+  
+    }
+
 `

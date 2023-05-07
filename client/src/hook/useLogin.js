@@ -21,13 +21,13 @@ export const useLogin = () => {
     if (!response.ok) {
       setIsLoading(false)
       setIserror(json.error)
-      console.log(false);
+
     }
 
     if (response.ok) {
       // // save the user to local storage
-      // localStorage.setItem('user', JSON.stringify(json))
-console.log("true");
+      localStorage.setItem('user', JSON.stringify(json))
+
       // update the auth context
       dispatch({type: 'LOGIN', payload: json})
 

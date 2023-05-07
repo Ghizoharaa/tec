@@ -6,7 +6,6 @@ import {CgProfile,CgLogOut} from "react-icons/cg"
 import { IconContext } from 'react-icons/lib';
 import {
   Nav, NavContainer, NavLogo, MobileIcon, NavItem, Navlinks, NavMenu
-
 } from './style';
 import { Button, Tooltip } from '@mui/material';
 import { useAuth } from '../../hook/useAuth';
@@ -91,9 +90,9 @@ console.log(theme);
             {
               !user ?
 
-
+         
                 <Tooltip title={"login pages"}>
-                  <Button onClick={() => { setOpen(true); setClick(false) }} sx={{ borderRadius: "18px", margin: "13px" }} variant='contained'>login</Button>
+                  <Button  onClick={() => { setOpen(true); setClick(false) }} sx={{ borderRadius: "18px", margin: "13px" }} variant='contained'>login</Button>
                 </Tooltip>
                 :
                 <>

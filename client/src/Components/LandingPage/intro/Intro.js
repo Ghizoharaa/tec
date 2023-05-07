@@ -9,7 +9,7 @@ const Intro = () => {
 
             <ContainerI theme={theme}>
                 <Left>
-                    <Title>We providing <Span> Free Consulting </Span>and<Span> other services</Span></Title>
+                <Title>We providing <Span> Free Consulting </Span>and<Span> other services</Span></Title>
                     <Description>
                     Training Edge Consulting is a top-notch provider of professional training and consulting services for businesses. Our team of experienced professionals works closely with clients to develop customized training programs tailored to their specific needs.
                     </Description>

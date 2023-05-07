@@ -1,5 +1,5 @@
 import { useState, } from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import Navbar from "./Components/Nabar/Navbar";
 import GlobleStyle, { Container } from "./golobalStyle";
 import  Intro from "./Components/LandingPage/intro/Intro"
@@ -17,6 +17,8 @@ import Homepage from "./pages/Homepage";
 import { Profile } from "./Components/Profile/Profile";
 import { useAuth } from "./hook/useAuth";
 import { useTheme } from "./hook/useTheme";
+import LayoutC from "./dasborad/Dashbord/Layout/LayoutC";
+import DashboredContent from "./dasborad/Dashbord/DashboredContent";
 
 
 function App() {
@@ -24,7 +26,7 @@ function App() {
   const [click, setClick] =useState(false)
   const [open, setOpen] = useState(false);
   const [SignInFirst, setSignInFirst] =useState(false);
-  const [dark, setDark] =useState([]);
+
   
 const {user}=useAuth()
 const {theme}=useTheme()
@@ -36,12 +38,17 @@ const {theme}=useTheme()
 
   //    fetchData()
   // },[])
+// console.log(user?.role);
+if (
 
+   user?.role=="admin" 
+) {
+  return <LayoutC children={<DashboredContent/>}/>
+}
   return (
     
    
     <ConatinerApp theme={theme} click={click}>
-       <BrowserRouter>
    
      <Navbar open={open} setOpen={setOpen} click={click} setClick={setClick}/>
      <BasicModal open={open} setClick={setClick}   setOpen={setOpen} >
@@ -51,22 +58,29 @@ const {theme}=useTheme()
           SignInFirst && !user  ? <SignUp setSignInFirst={setSignInFirst}/> :<SignIn  setSignInFirst={setSignInFirst}/>
         }
 
-
-       
+      
 
        </BasicModal>
        <Routes>
-        <Route path="/" element={<Homepage dark={dark}/>} />
-        <Route path="/about" element={<AboutPage dark={dark}/>} />
-        <Route path="/services" element={<Servicespage dark={dark}/>} />
-         <Route path="/profile" element={<Profile dark={dark}/>} />
+        <Route index path="/" element={<Homepage />} />
+        <Route path="/about" element={<AboutPage />} />
+        <Route path="/services" element={<Servicespage />} />
+         <Route path="/profile" element={user  ?  <Profile />: <Navigate to="/"/>} />
+         {/* <Route path="/login" element={  <BasicModal open={open} setClick={setClick}   setOpen={setOpen} >
+                 hello
+        
+      
+
+       </BasicModal>} /> */}
+
+         
       </Routes>
    
       
       
     <Footer/>
     
-    </BrowserRouter>
+ 
 
     
     </ConatinerApp>

@@ -3,8 +3,7 @@ import Intro from '../Components/LandingPage/intro/Intro'
 import About from '../Components/About/About'
 import Services from '../Components/Services/Services'
 import Contact from '../Components/contact/Contact'
-// import { Profile } from '../Components/Profile/Profile'
-// import Footer from '../Components/Footer/Footer'
+import Accordian from '../Components/accordion/Accordian'
 
 export default function Homepage() {
   return (
@@ -13,7 +12,7 @@ export default function Homepage() {
     <Intro/>
     <About />
      <Services/>
-   
+     <Accordian/>
      <Contact/>
      
        
