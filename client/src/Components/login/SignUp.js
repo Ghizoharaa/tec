@@ -23,12 +23,13 @@ export default function SignUp({setSignInFirst}) {
   const [firstname,setFirstname]=React.useState("")
   const [lastname,setLasname]=React.useState("")
 const [email,setEmail]=React.useState("")
+const [age,setAge]=React.useState("")
 const {isLoading,iserror,signup}=useSignup()
 const [password,setPassord]=React.useState("")
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    await signup (firstname,lastname,email,password);
+    await signup (firstname,lastname,age, email,password);
   };
 
 
@@ -80,6 +81,18 @@ const [password,setPassord]=React.useState("")
                   label="Last Name"
                   name="lastName"
                   autoComplete="family-name"
+                />
+              </Grid>
+              <Grid item xs={12}>
+                <TextField
+                  required
+                  fullWidth
+                  id="age"
+                  value={age}
+                  onChange={e=>setEmail(e.target.value)}
+                  label="Enter your age"
+                  name="age"
+                  autoComplete="age"
                 />
               </Grid>
               <Grid item xs={12}>

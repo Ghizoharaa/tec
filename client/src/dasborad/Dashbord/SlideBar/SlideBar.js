@@ -8,17 +8,20 @@ import { BsFillFilePostFill  } from 'react-icons/bs'
 import { GoGitPullRequest  } from 'react-icons/go'
 export const SlideBar = () => {
   return (
-    <Bar >
+    <Bar className='bar'>
         <div className='logo'>
                   <GrUserAdmin/>
               
                 </div>
      <div className='group-btn'>
 
-     <NavLink to="/"><RxDashboard/>Dashboard</NavLink>
+        <NavLink to="/"><RxDashboard/>Dashboard</NavLink>
         <NavLink  to="/users"><FiUsers/>Users</NavLink>
         <NavLink  to="/news"><BsFillFilePostFill/> news</NavLink>
         <NavLink to="/request"><GoGitPullRequest/> request</NavLink>
+        <NavLink to="/services"><GoGitPullRequest/> Services</NavLink>
+
+        
      </div>
 
     </Bar>
@@ -81,6 +84,7 @@ svg{
   font-size:40px;
 }
 }
+
 
 `
 
